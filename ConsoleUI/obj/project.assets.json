@@ -5971,19 +5971,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emre\\.nuget\\packages\\": {}
+    "C:\\Users\\emre\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emre\\source\\repos\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
+      "projectUniqueName": "C:\\Users\\emre\\source\\repos\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
       "projectName": "ConsoleUI",
-      "projectPath": "C:\\Users\\Emre\\source\\repos\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
-      "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emre\\source\\repos\\FinalProject\\ConsoleUI\\obj\\",
+      "projectPath": "C:\\Users\\emre\\source\\repos\\FinalProject\\ConsoleUI\\ConsoleUI.csproj",
+      "packagesPath": "C:\\Users\\emre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emre\\source\\repos\\FinalProject\\ConsoleUI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5997,14 +6002,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Emre\\source\\repos\\FinalProject\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\Emre\\source\\repos\\FinalProject\\Business\\Business.csproj"
+            "C:\\Users\\emre\\source\\repos\\FinalProject\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\emre\\source\\repos\\FinalProject\\Business\\Business.csproj"
             },
-            "C:\\Users\\Emre\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Emre\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\emre\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\emre\\source\\repos\\FinalProject\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\Emre\\source\\repos\\FinalProject\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\Emre\\source\\repos\\FinalProject\\Entities\\Entities.csproj"
+            "C:\\Users\\emre\\source\\repos\\FinalProject\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\emre\\source\\repos\\FinalProject\\Entities\\Entities.csproj"
             }
           }
         }
@@ -6033,7 +6038,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
