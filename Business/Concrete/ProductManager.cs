@@ -3,6 +3,8 @@ using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.demo;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofec.Caching;
+using Core.Aspects.Autofec.Transaction;
 using Core.Aspects.Autofec.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Business;
@@ -32,6 +34,7 @@ namespace Business.Concrete
         }
         [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
         {
             IResult result = BusinessRules.Run(CheckIfProductNameAlreadyExists(product.ProductName),
@@ -43,7 +46,10 @@ namespace Business.Concrete
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);    
         }
-        [CachaAspect]
+
+        
+
+        [CacheAspect]
         public IDataResult<List<Product>> GetAll() 
         {
             if (DateTime.Now.Hour==22)
@@ -57,7 +63,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Product>> (_productDal.GetAll(p => p.CategoryId == id));
         }
-
+        [CacheAspect]
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product> (_productDal.Get(p=>p.ProductId ==productId));
@@ -73,6 +79,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDetailDto>> (_productDal.GetProductDetails());
         }
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Update(Product product)
         {
             if (CheckIfProductCountOfCategoryCorrect(product.CategoryId).Success)
@@ -109,6 +116,11 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.CategoryLimitExceded);
             }
             return new SuccessResult();
+        }
+        [TransactionScopeAspect]
+        public IResult AddTransactionalTest(Product product)
+        {
+            throw new NotImplementedException();
         }
 
 
