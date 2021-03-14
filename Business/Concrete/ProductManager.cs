@@ -43,7 +43,7 @@ namespace Business.Concrete
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);    
         }
-
+        [CachaAspect]
         public IDataResult<List<Product>> GetAll() 
         {
             if (DateTime.Now.Hour==22)
