@@ -11,11 +11,11 @@ namespace Business.ValidationRules.FluentValidation
         public ProductValidator()
         {
             RuleFor(p => p.ProductName).NotEmpty();
-            RuleFor(p=>p.ProductName).MinimumLength(2);
-            RuleFor(p => p.UnitPrice).GreaterThan(0);
-            RuleFor(p => p.UnitPrice).GreaterThan(0);
-            RuleFor(p => p.UnitPrice).GreaterThanOrEqualTo(10).When(p => p.CategoryId == 0);
-            RuleFor(p => p.ProductName).Must(StartWithA);
+            RuleFor(p=>  p.ProductName).MinimumLength(2).WithMessage("En az iki harf olmalı");
+            RuleFor(p => p.UnitPrice).NotEmpty();
+            RuleFor(p => p.UnitPrice).GreaterThan(10);
+            RuleFor(p => p.UnitPrice).GreaterThanOrEqualTo(10).When(p => p.CategoryId == 1);
+            RuleFor(p => p.ProductName).Must(StartWithA).WithMessage("Ürünler A harfi ile başlamalı");
         }
 
         private bool StartWithA(string arg)
